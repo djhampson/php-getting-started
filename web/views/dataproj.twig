@@ -7,6 +7,8 @@
     <tr>
       <th scope="col">*</th>
       <th scope="col">Name</th>
+      <th scope="col">Team</th>
+      <th scope="col">Pickup Time</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,8 @@
     <tr>
       <th scope="row">*</th>
       <td>{{ n.name }}</td>
+      <td>{{ n.team }}</td>      
+      <td>{{ n.pu_start }}</td>      
     </tr>
     {% endfor %}
   </tbody>

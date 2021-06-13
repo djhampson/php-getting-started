@@ -49,7 +49,7 @@ $app->get('/cowsay', function() use($app) {
 
 
 $app->get('/db/', function() use($app) {
-  $st = $app['pdo']->prepare('SELECT name, pu_date FROM pickups');
+  $st = $app['pdo']->prepare('SELECT name, team, pu_date, pu_start FROM pickups');
   $st->execute();
 
   $names = array();

@@ -17,3 +17,6 @@ VALUES
 ;
 
 select * from pickups;
+
+
+SELECT name, team, pu_date, pu_start FROM pickups ORDER BY pu_start desc;

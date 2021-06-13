@@ -49,7 +49,7 @@ $app->get('/cowsay', function() use($app) {
 
 
 $app->get('/db/', function() use($app) {
-  $st = $app['pdo']->prepare('SELECT name, team, pu_date, pu_start FROM pickups ORDER BY pu_start desc');
+  $st = $app['pdo']->prepare('SELECT name, team, pu_date, pu_start FROM pickups ORDER BY pu_start asc');
   $st->execute();
 
   $names = array();

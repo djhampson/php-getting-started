@@ -30,6 +30,9 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
+
+
+
 // Our web handlers
 
 $app->get('/', function() use($app) {
@@ -46,7 +49,7 @@ $app->get('/cowsay', function() use($app) {
 
 
 $app->get('/db/', function() use($app) {
-  $st = $app['pdo']->prepare('SELECT name FROM test_table');
+  $st = $app['pdo']->prepare('SELECT name FROM pickups');
   $st->execute();
 
   $names = array();

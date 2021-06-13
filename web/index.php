@@ -34,21 +34,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 
 // Our web handlers
-
 $app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
-});
-
-
-
-$app->get('/cowsay', function() use($app) {
-  $app['monolog']->addDebug('cowsay');
-  return "<pre>".\Cowsayphp\Cow::say("Howdy")."</pre>";
-});
-
-
-$app->get('/db/', function() use($app) {
   $st = $app['pdo']->prepare('SELECT name, team, pu_date, pu_start FROM pickups ORDER BY pu_start asc');
   $st->execute();
 

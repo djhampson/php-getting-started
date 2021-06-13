@@ -49,7 +49,7 @@ $app->get('/cowsay', function() use($app) {
 
 
 $app->get('/db/', function() use($app) {
-  $st = $app['pdo']->prepare('SELECT name FROM pickups');
+  $st = $app['pdo']->prepare('SELECT name, pu_date FROM pickups');
   $st->execute();
 
   $names = array();
@@ -58,7 +58,7 @@ $app->get('/db/', function() use($app) {
     $names[] = $row;
   }
 
-  return $app['twig']->render('database.twig', array(
+  return $app['twig']->render('dataproj.twig', array(
     'names' => $names
   ));
 });

@@ -5,7 +5,6 @@
 <table class="table table-success table-striped">
   <thead>
     <tr>
-      <th scope="col">*</th>
       <th scope="col">Name</th>
       <th scope="col">Team</th>
       <th scope="col">Pickup Time</th>
@@ -14,8 +13,7 @@
   <tbody>
     {% for n in names %}
     <tr>
-      <th scope="row">*</th>
-      <td>{{ n.name }}</td>
+      <th scope="row">{{ n.name }}</th>
       <td>{{ n.team }}</td>      
       <td>{{ n.pu_start }}</td>      
     </tr>
